@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class ProductList extends Component {
   render() {
     const { products } = this.props;
-    if (products === null || products.length === 0) {
+    if (products == null || products.length === 0) {
       return <h5 className="p-2">No Products</h5>;
     }
 

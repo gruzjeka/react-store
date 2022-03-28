@@ -1,23 +1,22 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import ToggleLink from "../shared/ToggleLink";
 
 export default class CategoryList extends Component {
   render() {
     const { baseUrl, categories } = this.props;
     return (
       <>
-        <Link className="btn btn-secondary btn-block" to={baseUrl}>
+        <ToggleLink to={baseUrl} exact={true}>
           All
-        </Link>
+        </ToggleLink>
         {categories &&
           categories.map((category) => (
-            <Link
-              className="btn btn-secondary btn-block"
+            <ToggleLink
               key={category}
               to={`${baseUrl}/${category.toLowerCase()}`}
             >
               {category}
-            </Link>
+            </ToggleLink>
           ))}
       </>
     );
